@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - H.I.A.A R.O.P.S</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para la animación de los productos */
+
+        .listaProductos {
+            display: flex;
+            justify-content: space-between;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+
+        .producto {
+            font-size: 12px;
+            background-color: #f5e1da; /* Color de fondo suave */
+            padding: 5px;
+            border-radius: 10px;
+            padding: 5px;
+            flex: 0 0 auto;
+            width: calc(18% - 15px);
+            margin: 0 10px;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            transform: translateY(20px);
+        }
+        .producto:hover {
+            background-color: #f0d2c4;
+            cursor: pointer;
+        }
+        .producto.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* .producto img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        } */
+
+        .producto h3 {
+            font-size: 1.2em;
+            color: #3d5a80; /* Azul pastel */
+            margin-bottom: 8px;
+        }
+
+        .producto p {
+            font-size: 1em;
+            color: #293241; /* Azul oscuro */
+            margin-bottom: 8px;
+        }
+        .producto ul {
+            margin: 0;
+        }
+        .producto .precio {
+            font-size: 1.2em;
+            color: #e07a5f; /* Melocotón */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="active"><a href="#inicio">Inicio</a></li>
+                <li><a href="Catalogo.html">Catalogo</a></li>
+                <li><a href="Carrito.html">Carrito de compras</a></li>
+		        <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="Conocenos.html">Conocenos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <img src="logotipo.jpg" alt="logotipo" style="width: 100px; height: 100px; float: left; margin-right: 20px;">
+        <h1 style="text-align: center;">H.I.A.A R.O.P.S</h1>
+    </section>
+    
+
+  <section>
+    <div class="seccionProducto">
+        <h2>PROMOCIÓN DE ROPA Y MODA</h2>
+        <div class="listaProductos">
+            <div class="producto promociones"> 
+                <div class="imagen-nombre">
+                    <img src="ropa1.jpg" alt="Camiseta Estampada">
+                    <h3>Camiseta Estampada</h3>
+                </div>
+                <div>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Material suave y cómodo</li>
+                        <li>Diseño moderno y elegante</li>
+                        <li>Disponible en varios colores</li>
+                        <li>Tallas: S, M, L</li>
+                    </ul>
+                    <p class="precio"><b>Precio: $29.99</b></p>
+                </div>
+            </div>
+            <div class="producto promociones"> 
+                <div class="imagen-nombre">
+                    <img src="ropa2.jpg" alt="Pantalón de Mezclilla">
+                    <h3>Pantalón de Mezclilla</h3>
+                </div>
+                <div>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Denim de alta calidad</li>
+                        <li>Diseño clásico y versátil</li>
+                        <li>Ajuste cómodo y duradero</li>
+                    </ul>
+                    <p class="precio"><b>Precio: $39.99</b></p>
+                </div>
+            </div>
+            <div class="producto promociones"> 
+                <div class="imagen-nombre">
+                    <img src="ropa3.jpg" alt="Blusa Elegante">
+                    <h3>Blusa Elegante</h3>
+                </div>
+                <div>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Tela ligera y fresca</li>
+                        <li>Detalle de encaje en las mangas</li>
+                        <li>Perfecta para ocasiones especiales</li>
+                    </ul>
+                    <p class="precio"><b>Precio: $24.99</b></p>
+                </div>
+            </div>
+            <div class="producto promociones"> 
+                <div class="imagen-nombre">
+                    <img src="ropa4.jpg" alt="Abrigo de Invierno">
+                    <h3>Abrigo de Invierno</h3>
+                </div>
+                <div>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Forro térmico para mayor calidez</li>
+                        <li>Diseño elegante y funcional</li>
+                        <li>Capucha desmontable</li>
+                    </ul>
+                    <p class="precio"><b>Precio: $79.99</b></p>
+                </div>
+            </div>
+            <div class="producto promociones" onclick="mostrarDetalle(this)"> 
+                <div class="imagen-nombre">
+                    <img src="ropa5.jpg" alt="Zapatillas Urbanas">
+                    <h3>Zapatillas Urbanas</h3>
+                </div>
+                <div>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Suela antideslizante</li>
+                        <li>Diseño moderno y versátil</li>
+                        <li>Perfectas para el uso diario</li>
+                    </ul>
+                    <p class="precio"><b>Precio: $59.99</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div >
+        <p>&copy; 2024 H.I.A.A R.O.P.S. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+    <script>
+        var currentProduct = 0;
+        var productos = document.querySelectorAll('.producto');
+
+        function showProduct(index) {
+            // Ocultar producto actual
+            productos[currentProduct].classList.remove('visible');
+
+            // Establecer nuevo producto como visible
+            currentProduct = index;
+            productos[currentProduct].classList.add('visible');
+        }
+
+        // Función para avanzar al siguiente producto
+        function nextProduct() {
+            var nextIndex = currentProduct + 1;
+            if (nextIndex >= productos.length) {
+                nextIndex = 0; // Volver al primer producto al llegar al final
+            }
+            showProduct(nextIndex);
+        }
+
+        // Mostrar el primer producto al cargar la página
+        showProduct(0);
+
+        // Cambiar automáticamente de producto cada cierto tiempo
+        setInterval(nextProduct, 5000); // Cambiar cada 5 segundos (5000 milisegundos)
+    </script>
+    <script>
+        
+
+        productos.forEach(producto => {
+                producto.addEventListener("click", () => mostrarDetalle(producto));
+        });
+
+        function mostrarDetalle(producto) {
+        // Obtener los detalles del producto
+        var nombre = producto.querySelector('h3').textContent;
+        var caracteristicas = producto.querySelector('ul').innerHTML;
+        var precio = producto.querySelector('.precio').textContent;
+        var imagenSrc = producto.querySelector('img').src;
+
+        // Almacenar detalles en sessionStorage para mostrar en la página de detalle
+        sessionStorage.setItem('nombreProducto', nombre);
+        sessionStorage.setItem('caracteristicasProducto', caracteristicas);
+        sessionStorage.setItem('precioProducto', precio);
+        sessionStorage.setItem('imagenProducto', imagenSrc);
+
+        // Redirigir a la página de detalle
+        window.location.href = "detalle_producto.html";
+        }
+    </script>
+</body>
+</html>

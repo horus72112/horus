@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para la disposición de los productos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h2 {
+
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        header .logo-container {
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin-right: 10px;
+            
+        }
+
+        .listaProductos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .producto {
+            flex: 0 0 calc(33.33% - 20px);
+            max-width: calc(33.33% - 20px);
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            cursor: pointer; /* Cursor cambia a puntero al pasar sobre el producto */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .producto:hover {
+            background-color: #f0f0f0; /* Cambio de color de fondo al pasar el cursor */
+            transform: scale(1.05);
+        }
+
+        .producto ul{
+            text-align: left;
+            margin-left: 30px;
+
+        }
+        .producto img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        h3, h4, ul, p {
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        .precio {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="active"><a href="index.html">Inicio</a></li>
+                <li><a href="Catalogo.html">Catalogo</a></li>
+                <li><a href="Carrito.html">Carrito de compras</a></li>
+		        <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="Conocenos.html">Conocenos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="inicio" class="hero">
+        <img src="logotipo.jpg" alt="logotipo" style="width: 100px; height: 100px; float: left; margin-right: 20px;">
+        <h1 style="text-align: center;">H.I.A.A R.O.P.S</h1>
+    </section>
+
+    
+    <section>
+        <div class="seccionProducto">
+            <h2>Formal</h2>
+            <div class="listaProductos">
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="imagen1.jpg" alt="Camiseta basica manga corta">
+                    <h3>Camiseta básica de manga corta</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Fabricada en algodón de alta calidad,</li>
+                        <li>ideal para uso diario</li>
+                        <li>Facil de combinar</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$300</p>
+                </div>
+
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="imagen2.jpg" alt="Falda plisada">
+                    <h3>Falda plisada de estilo retro</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Diseño de pliegues</li>
+                        <li>Elegante</li>
+                        <li>Femenino</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$500</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="imagen3.jpg" alt="Vestido de noche">
+                    <h3>Vestido de noche elegante</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Detalles de encaje</li>
+                        <li>Escote en V</li>
+                        <li>Elegante y sofisticado</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$1200</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="imagen4.jpg" alt="Vestido de punto casual">
+                    <h3>Vestido de punto Casual</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Botones en el frente</li>
+                        <li>Look casual</li>
+                        <li>Sumamente comodo</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$600</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="imagen5.jpg" alt="Camiseta de franella a cuadros">
+                    <h3>Camiseta de franela a cuadros</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Estilo rustico</li>
+                        <li>confortable</li>
+                        <li>Estilo clasico</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$600</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="seccionProducto">
+            <h2>Abrigos</h2>
+            <div class="listaProductos">
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="blazer.jpeg" alt="Blazer de corte Slim">
+                    <h3>Blazer de corte Slim</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Elegante</li>
+                        <li>Versatil</li>
+                        <li>Corte ajustado y moderno</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$1000</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="chaqueta-bomber.jpeg" alt="Chaqueta bomber acolchonada">
+                    <h3>Chaqueta bomber acolchonada</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Cierre de cremayera</li>
+                        <li>Blosillos laterales</li>
+                        <li>Casual y urbano</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$1100</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="sueter-punto.jpeg" alt="Sueter de punto grueso">
+                    <h3>Sueter de punto grueso</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Tejido grueso</li>
+                        <li>Diseño clasico</li>
+                        <li>Muy calido</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$900</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="jersey-cuello-alto.jpeg" alt="Jersey de cuello alto">
+                    <h3>Jersey de cuello alto</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Tejido suave</li>
+                        <li>Calido</li>
+                        <li>Abrigo de climas frios</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$600</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="chaleco-sin-mangas.jpeg" alt="Chaleco acolchonado sin mangas">
+                    <h3>Chaleco acolchonado sin mangas</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Acolchonado</li>
+                        <li>Sin mangas</li>
+                        <li>Excelente capa adicional</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$700</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="seccionProducto">
+            <h2>Casual</h2>
+            <div class="listaProductos">
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="short-antitranspirante.jpeg" alt="Short deportivo de secado rapido">
+                    <h3>Short deportivo de secado rapido</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Tejido de secado rapido</li>
+                        <li>Comodo</li>
+                        <li>Fresco</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$400</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="camiseta-sin-mangas.jpeg" alt="Camiseta de tirantes deportivas">
+                    <h3>Camiseta de tirantes deportivas</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Tecnología de absorción de humedad</li>
+                        <li>Mantiene fresco y seco</li>
+                        <li>Ideal para ejercitarse</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$350</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="pantalon-recto.jpeg" alt="Jeans de corte recto">
+                    <h3>Jeans de corte recto</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Lavado clásico</li>
+                        <li>Corte recto</li>
+                        <li>Versatil</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$700</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="pantalon-corto.jpeg" alt="Pantalones cortos de lino">
+                    <h3>Pantalones cortos de lino</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Ligeros y transpirables</li>
+                        <li>Fresco</li>
+                        <li>Perfecto en verano</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$500</p>
+                </div>
+
+                <div class="producto" onclick="mostrarDetalle(this)">
+                    <img src="blusa-floreada.jpeg" alt="Blusa Estampada de flores">
+                    <h3>Blusa Estampada de flores</h3>
+                    <h4>Características</h4>
+                    <ul>
+                        <li>Manga corta</li>
+                        <li>Estampado floral</li>
+                        <li>Fresco y primaveral</li>
+                    </ul>
+                    <p class="precio"><b>Precio: </b>$400</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div >
+            <p>&copy; 2024 H.I.A.A R.O.P.S. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function mostrarDetalle(producto) {
+        // Obtener los detalles del producto
+        var nombre = producto.querySelector('h3').textContent;
+        var caracteristicas = producto.querySelector('ul').innerHTML;
+        var precio = producto.querySelector('.precio').textContent;
+        var imagenSrc = producto.querySelector('img').src;
+
+        // Almacenar detalles en sessionStorage para mostrar en la página de detalle
+        sessionStorage.setItem('nombreProducto', nombre);
+        sessionStorage.setItem('caracteristicasProducto', caracteristicas);
+        sessionStorage.setItem('precioProducto', precio);
+        sessionStorage.setItem('imagenProducto', imagenSrc);
+
+        // Redirigir a la página de detalle
+        window.location.href = "detalle_producto.html";
+        }
+    </script>
+</body>
+</html>

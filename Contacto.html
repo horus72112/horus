@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Sitio de Moda</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #f7d794;
+            color: #333;
+            padding: 15px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background-color: #f7d794;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #f9ca24;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: #f5e1da;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #3d5a80;
+            font-weight: bold;
+        }
+
+        form input,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        form textarea {
+            height: 150px;
+        }
+
+        form button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #e07a5f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #f9ca24;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #3d5a80;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Contacto</h1>
+        <p>¡Estamos encantados de escucharte! Contáctanos mediante el formulario a continuación o visita nuestra oficina.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Catalogo.html">Catálogo</a></li>
+            <li><a href="Carrito.html">Carrito de Compras</a></li>
+            <li><a href="Contacto.html">Contacto</a></li>
+            <li><a href="Conocenos.html">Conócenos</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Información de Contacto</h2>
+        <p>Estaremos encantados de ayudarte. Aquí tienes nuestra información de contacto:</p>
+
+        <ul>
+            <li><strong>Dirección:</strong> Calle Fashion, Número 123, Ciudad de la Moda</li>
+            <li><strong>Teléfono:</strong> +123 456 7890</li>
+            <li><strong>Email:</strong> info@sitiodemoda.com</li>
+        </ul>
+
+        <form action="#" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </div>
+</body>
+</html>

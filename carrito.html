@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .carrito-item { background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 25px;
+            padding: 1rem;
+        }
+        .carrito-item img { width: 50px; }
+        .cantidad { width: 50px; text-align: center; }
+        .total { font-weight: bold; }
+        .acciones { margin-top: 20px; }
+        .boton-eliminar { 
+            margin-left: 10px;
+            background-color: #95a5a6;
+            border: none;
+            color: white;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+        }
+    </style>
+    <style>
+        /* Estilos para el detalle del producto */
+        body {
+            width: 100%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            padding-bottom: 60px; /* Espacio para el footer */
+        }
+        #box {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+            margin-bottom: 80px;
+        }
+        #caracteristicasProducto {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+        .detalle {
+            border-radius: 10px;
+            margin: 50px;
+            width: 250px;
+            padding: 20px;
+            background-color: #f5e1da; /* Color de fondo suave */
+        }
+
+        .detalle img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h3, h4, ul, p {
+            margin: 10px 0;
+            padding: 0;
+        }
+
+        .precio {
+            font-weight: bold;
+        }
+
+        /* Estilos para el menú de navegación */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        #total {
+    position: fixed;
+    bottom: 120px; /* Ajusta según la altura del botón de finalizar compra */
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+}
+
+.acciones {
+    position: fixed;
+    bottom: 55px;
+    width: 100%;
+    /* background-color: #333; */
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
+}
+
+.acciones button {
+    background-color: #27ae60;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.acciones button:hover {
+    background-color: #2ecc71;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li class="active"><a href="index.html">Inicio</a></li>
+                <li><a href="Catalogo.html">Catalogo</a></li>
+                <li><a href="Carrito.html">Carrito de compras</a></li>
+		        <li><a href="Contacto.html">Contacto</a></li>
+                <li><a href="Conocenos.html">Conocenos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <img src="logotipo.jpg" alt="logotipo" style="width: 100px; height: 100px; float: left; margin-right: 20px;">
+        <h1 style="text-align: center;">H.I.A.A R.O.P.S</h1>
+    </section>
+
+    <div id="carrito"></div>
+    <div id="total" class="total"></div>
+    <div class="acciones">
+        <button id="finalizar-compra">Finalizar Compra</button>
+    </div>
+
+    <footer>
+        <div >
+            <p>&copy; 2024 H.I.A.A R.O.P.S. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function actualizarCarrito() {
+            var carrito = JSON.parse(sessionStorage.getItem('carrito')) || [];
+            var carritoContainer = document.getElementById('carrito');
+            var totalContainer = document.getElementById('total');
+            carritoContainer.innerHTML = '';
+            var total = 0;
+    
+            carrito.forEach((producto, index) => {
+                var productoTotal = producto.precio * producto.cantidad;
+                total += productoTotal;
+    
+                var item = document.createElement('div');
+                item.className = 'carrito-item';
+                item.innerHTML = `
+                    <img src="${producto.imagen}" alt="${producto.nombre}">
+                    <div>${producto.nombre}</div>
+                    <div>$${producto.precio.toFixed(2)}</div>
+                    <input type="number" class="cantidad" value="${producto.cantidad}" min="1" data-index="${index}">
+                    <div>$${productoTotal.toFixed(2)}</div>
+                    <button class="boton-eliminar" data-index="${index}">Eliminar</button>
+                `;
+                carritoContainer.appendChild(item);
+            });
+    
+            totalContainer.innerHTML = `Total: $${total.toFixed(2)}`;
+    
+            // Añadir event listener a los inputs de cantidad
+            var cantidades = document.querySelectorAll('.cantidad');
+            cantidades.forEach(input => {
+                input.addEventListener('change', function() {
+                    var index = this.dataset.index;
+                    var nuevaCantidad = parseInt(this.value);
+                    carrito[index].cantidad = nuevaCantidad;
+                    sessionStorage.setItem('carrito', JSON.stringify(carrito));
+                    actualizarCarrito();
+                });
+            });
+    
+            // Añadir event listener a los botones de eliminar
+            var botonesEliminar = document.querySelectorAll('.boton-eliminar');
+            botonesEliminar.forEach(button => {
+                button.addEventListener('click', function() {
+                    var index = this.dataset.index;
+                    carrito.splice(index, 1);
+                    sessionStorage.setItem('carrito', JSON.stringify(carrito));
+                    actualizarCarrito();
+                });
+            });
+        }
+    
+        // Inicializar carrito al cargar la página
+        actualizarCarrito();
+    
+        // Añadir event listener al botón de finalizar compra
+        document.getElementById('finalizar-compra').addEventListener('click', function() {
+            // Mostrar alerta de compra finalizada
+            alert('Compra finalizada');
+            
+            // Vaciar el carrito
+            sessionStorage.removeItem('carrito');
+            
+            // Actualizar el contenido del carrito en la página
+            actualizarCarrito();
+        });
+    </script>
+    
+</body>
+</html>
